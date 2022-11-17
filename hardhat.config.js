@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("./tasks")
 require("dotenv").config()
+require("hardhat-deploy")
 
 const MAINNET_RPC_URL =
     process.env.MAINNET_RPC_URL ||
@@ -28,12 +29,37 @@ module.exports = {
                 version: "0.8.7",
             },
             {
+                version: "0.7.6",
+            },
+            {
                 version: "0.6.6",
             },
             {
                 version: "0.4.24",
             },
         ],
+        overrides: {
+            "contracts/IOrderSwapper.sol": {
+                version: "0.7.6",
+                settings: {},
+            },
+            "contracts/OrderSwapper.sol": {
+                version: "0.7.6",
+                settings: {},
+            },
+            "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+                version: "0.7.6",
+                settings: {},
+            },
+            "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol": {
+                version: "0.7.6",
+                settings: {},
+            },
+            "@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+                version: "0.7.6",
+                settings: {},
+            },
+        },
     },
     networks: {
         hardhat: {
@@ -42,12 +68,14 @@ module.exports = {
             forking: {
                 url: MAINNET_RPC_URL,
                 blockNumber: FORKING_BLOCK_NUMBER,
-                enabled: false,
+                enabled: true,
             },
             chainId: 31337,
+            allowUnlimitedContractSize: true,
         },
         localhost: {
             chainId: 31337,
+            allowUnlimitedContractSize: true,
         },
         goerli: {
             url: GOERLI_RPC_URL,
@@ -97,12 +125,17 @@ module.exports = {
         ],
     },
     paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./build/cache",
-    artifacts: "./build/artifacts"
+        sources: "./contracts",
+        tests: "./test",
+        cache: "./build/cache",
+        artifacts: "./build/artifacts",
     },
     mocha: {
         timeout: 200000, // 200 seconds max for running tests
+    },
+    namedAccounts: {
+        deployer: {
+            default: 0, // here this will by default take the first account as deployer
+        },
     },
 }
