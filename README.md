@@ -46,13 +46,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-*Problem*
+**Problem**
+
 * Funds stored on exchange account while waiting for the strike price
 * Requires trust which is the issue more and more
 * Easy to slide down into using central database for projects
 
-*Solution*
+**Solution**
+
 No simple solution, we should just continue pushing forward and improving current decentrilized implementations.
 As integrity very important - more and more people should be involved.
 Here I am just exploring possibility of doing limit trade without need to trust central authority.
@@ -64,8 +65,15 @@ Here I am just exploring possibility of doing limit trade without need to trust 
 
 ### Built With
 
-* [![Hardhat][Hardhat]][Hardhat-url]
-* [![Chainlink][Chainlink]][Chainlink-url]
+<!-- * [![Hardhat][Hardhat]][Hardhat-url]
+* [![Chainlink][Chainlink]][Chainlink-url] -->
+<a href="https://hardhat.org/">
+<img src="images/hardhat-logo.png" alt="Hardhat" width="100" height="70"/>
+</a>
+<br />
+<a href="https://chain.link/">
+<img src="images/chainlink-logo.png" alt="Chainlink" width="240" height="70"/>
+</a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -142,13 +150,3 @@ yarn hardhat run scripts/putTogether.js --network localhost
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: images/dex.png
-[Hardhat]: images/hardhat-logo.png
-[Hardhat-url]: https://hardhat.org/
-[Chainlink]: images/chainlink-logo.png
-[Chainlink-url]: https://chain.link/
